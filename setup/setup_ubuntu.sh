@@ -6,8 +6,8 @@ GO_VERSION="1.18.1"
 
 # Define project specific variables
 PROJECT_DIR="lowtide"
-REPO_URL="https://github.com/13city/lowtide.git"
-MODULE_PATH="github.com/13city/lowtide" # This should match the module's path used in go mod init
+REPO_URL="https://github.com/13city/Lowtide.git"
+MODULE_PATH="github.com/13city/Lowtide" # This should match the module's path used in go mod init
 
 # Update and Upgrade Ubuntu Packages
 echo "Updating and upgrading Ubuntu packages..."

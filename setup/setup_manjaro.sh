@@ -3,8 +3,8 @@
 
 # Define project specific variables
 PROJECT_DIR="lowtide"
-REPO_URL="https://github.com/13city/lowtide.git"
-MODULE_PATH="github.com/13city/lowtide" # This should match the module's path used in go mod init
+REPO_URL="https://github.com/13city/Lowtide.git"
+MODULE_PATH="github.com/13city/Lowtide" # This should match the module's path used in go mod init
 
 # Update and Upgrade Manjaro Packages
 echo "Updating and upgrading Manjaro packages..."
