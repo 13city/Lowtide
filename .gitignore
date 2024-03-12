@@ -1,0 +1,46 @@
+# Binary executable
+lowtide
+
+# IPs
+ranges.txt
+
+# Dependency directories (remove the comment below if you are using vendoring)
+# /vendor/
+
+# Object files, archives (.a), shared libraries (.so, .dll, .dylib), and executables (.exe)
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+
+# Log files
+/logging
+
+# Configuration files
+config.json
+
+# Editor files and directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Go build directory
+/bin/
+/pkg/
+
+# Go Module files
+go.sum
+go.mod
+
+# Test binary, built with `go test -c`
+*.test
+
+# Test coverage
+coverage.out
