@@ -1,6 +1,9 @@
 # Binary executable
 lowtide
 
+# Past versions
+_lowtide.go
+
 # IPs
 ranges.txt
 
