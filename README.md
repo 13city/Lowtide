@@ -1,7 +1,7 @@
 # Lowtide 🌌🔒 - Digital Recon Tool
 
 <p align="center">
-<img src="https://pixabay.com/images/search/low%20tide/" alt="Lowtide Logo" width="200"/>
+<img src="./images/lowtide.jpg" alt="Lowtide Logo" width="200"/>
 </p>
 
 **👾 Greetings, Hacker!** You've just discovered **Lowtide**, a cyber reconnaissance tool that dives deep into the digital abyss. Crafted with the precision of Go, this is your arsenal for uncovering hidden digital landscapes, exposing vulnerabilities, and navigating through networks with stealth and speed. 🚀💻
