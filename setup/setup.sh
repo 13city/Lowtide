@@ -2,7 +2,7 @@
 
 # Define Go version and project specific variables
 GO_VERSION="1.18.1"
-PROJECT_DIR="lowtide"
+PROJECT_DIR="Lowtide"
 REPO_URL="https://github.com/13city/Lowtide.git"
 MODULE_PATH="github.com/13city/Lowtide" # This should match the module's path used in go mod init
 
@@ -57,14 +57,14 @@ if [ ! -f "go.mod" ]; then
 fi
 
 # Build the project
-echo "Building the LowTide project..."
-go build -o lowtide
+echo "Building the Lowtide project..."
+go build -o Lowtide
 
 if [ $? -eq 0 ]; then
-    echo "LowTide has been successfully built."
+    echo "Lowtide has been successfully built."
 else
     echo "Build failed. Please check the Go installation and the project repository."
     exit 1
 fi
 
-echo "Setup completed. Run ./lowtide to start the application."
+echo "Setup completed. Run ./Lowtide to start the application."

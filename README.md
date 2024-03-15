@@ -1,106 +1,89 @@
-
-# Lowtide 🌊🔍 Dive into the Digital Depths
+# Lowtide 🌌🔒 - Digital Recon Tool
 
 <p align="center">
-<img src="https://your-logo-url-here.png" alt="Lowtide Logo" width="150"/>
+<img src="https://pixabay.com/images/search/low%20tide/" alt="Lowtide Logo" width="200"/>
 </p>
 
-**Embrace the cyberpunk spirit and navigate through the web's shadowy corridors.** 🛡️✨ Lowtide is not just a tool; it's your cybernetic augment for the digital age—a finely honed Go-powered engine designed for cybersecurity aficionados and digital defenders. With Lowtide, launch into cyberspace, penetrate the silence of the shadows, and illuminate the secrets that lie beneath.
+**👾 Greetings, Hacker!** You've just discovered **Lowtide**, a cyber reconnaissance tool that dives deep into the digital abyss. Crafted with the precision of Go, this is your arsenal for uncovering hidden digital landscapes, exposing vulnerabilities, and navigating through networks with stealth and speed. 🚀💻
 
 ## 🛠️ Features
 
-- **⚡ Lightning Scans**: Unleash Go's concurrent might to slice through networks like a katana through silk.
-- **🚩 Banner Reconnaissance**: Cast your net to catch elusive service banners, unveiling whispers of vulnerabilities.
-- **🔓 Port Infiltration**: Pry open the digital doors across IP edifices and hidden subnets, charting your path in the neon grid.
-- **📓 Chronicles of the Wire**: Every scan etches its tale into logs, crafting a saga of your digital conquests.
-- **🌐 Subnet Expeditions**: Traverse vast subnets with stealth and precision, mapping the contours of digital domains.
-- **🔧 Modularity Matrix**: Lowtide is engineered for evolution, inviting you to embed your code into its core.
+- **⚙️ Ultra-Fast Scans**: With Go's concurrency, scan thousands of ports in the blink of an eye.
+- **🎯 Targeted Banner Sniping**: Extract banners to identify services and their potential weak spots.
+- **🔑 Port Decoding**: Unlock the secrets behind every port with laser precision.
+- **📖 Digital Chronicles**: Log every detail of your cyber exploration in real-time.
+- **🌍 Subnet Safari**: Embark on subnet expeditions to map out uncharted digital territories.
+- **🔧 Hackable Core**: Modular design invites you to tweak, twist, and transform Lowtide to your will.
 
-## 🚀 Quick Start
+## 🚀 Setup
 
-Gear up, Runner! Before you jack in, let's refine your rig. Make sure Go is coursing through your system. Navigate to the `setup` directory in our repository for scripts that will streamline your environment setup, no matter your distro.
+Prep your rig for an epic hacking session. Ensure Go is installed, then unleash our setup script for a hassle-free setup.
 
-### Environment Setup
+### Configuration Script
 
-Equipping for the dive is straightforward with our tailored scripts:
-
-- **Ubuntu Runners**:
-  
-  ```bash
-  ./setup/setup_ubuntu.sh
-  ```
-
-- **Manjaro Nomads**:
-  
-  ```bash
-  ./setup/setup_manjaro.sh
-  ```
-
-### Compiling Lowtide
-
-The scripts will compile Lowtide, but should you ever need to invoke the compilation runes manually:
+Initiate your cyber toolkit with ease:
 
 ```bash
-go build -o lowtide
+./setup.sh
 ```
 
-Ensure your current directory is the root of Lowtide's domain, then summon the build.
+This magic script preps your environment, readying Lowtide for its maiden voyage.
 
-## 🗺️ Usage
+### Compiling Lowtide Manually
 
-Lowtide accepts your commands both as whispers in the shell and through the arcane scripts of `config.json`.
-
-### CLI Interface
-
-Direct your scans with precision through the command-line interface:
+Need to compile by hand? No sweat:
 
 ```bash
-./lowtide --startIP "192.0.2.1" --endIP "192.0.2.10" --ports "22,80,443" --timeout 1000
+go build -o Lowtide
 ```
 
-Channel the power to scan IP ranges, seeking out open ports with the patience of a shadow.
+Ensure you're in Lowtide's root directory and let the compilation begin.
 
-### Configuration Script (`config.json`)
+## 🕹️ Deployment
 
-For operations demanding detailed specifications, `config.json` is your grimoire:
+Engage Lowtide either through the shadows of the terminal or with the `config.json`.
+
+### CLI Invocation
+
+Command Lowtide's powers directly from the terminal for instant action:
+
+```bash
+./Lowtide --startIP "10.10.0.1" --endIP "10.10.0.254" --ports "22,80,443" --timeout 1000
+```
+
+### The `config.json` Codex
+
+Or, let `config.json` be your guide to specifying your digital raid parameters:
 
 ```json
 {
     "timeout": 1000,
-    "ports": "80,443",
-    "subnet": "192.168.1.0/24"
+    "ports": "22,80,443",
+    "subnet": "10.10.0.0/24"
 }
 ```
 
-Invoke Lowtide with your configurations:
+Activate Lowtide with your bespoke config:
 
 ```bash
-./lowtide -useConfig
+./Lowtide -useConfig
 ```
 
-### Configuration Parameters
+## 📚 Log Scrolls
 
-- **timeout**: The span (in ms) Lowtide waits, listening for echoes from the void.
-- **ports**: Designate your targets, be it a lone sentinel, a list, or an army ranged.
-- **startIP**/**endIP** (CLI): Define the bounds of your digital odyssey.
-- **subnet** (Config file): Chart your course through the subnet's expanse in CIDR.
+Dive into `./logs` to witness the saga of your digital dominance, where every conquest is meticulously chronicled.
 
-## 📁 Logs
+## 🛠 Contribute
 
-Lowtide engraves the stories of each expedition into the `./logging` directory, ensuring no detail of your digital dominion is lost to the ether.
-
-## 🤝 Contribute
-
-Aid in the evolution of Lowtide. Craft your enhancements, and through the rite of a pull request, merge your vision with ours.
+Join the Lowtide legion. Enhance its capabilities, share your prowess through pull requests, and etch your code into the annals of cyber history.
 
 ## 🆘 Support
 
-Lost among the wires or seeking knowledge? Open a beacon in our [GitHub repository](https://github.com/13city/Lowtide/issues), and guidance will find you.
+Encountered a cyber specter or in need of arcane knowledge? Cast a signal flare to our [GitHub issues](https://github.com/yourgithub/Lowtide/issues).
 
 ---
 
 <p align="center">
-<i>With Lowtide, the digital frontier is yours to explore—beyond the veil of neon lies untold power.</i>
+<i>Embrace Lowtide. Your journey into the depths of cyberspace begins now.</i> 🌐👤
 </p>
 
----

@@ -15,7 +15,7 @@ func SetupLogger() *log.Logger {
         log.Fatalf("Failed to create log directory: %v", err)
     }
 
-    logFilePath := filepath.Join(logDirPath, "lowtide.log")
+    logFilePath := filepath.Join(logDirPath, "Lowtide.log")
     logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
     logger.SetOutput(&lumberjack.Logger{
         Filename:   logFilePath,
