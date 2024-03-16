@@ -1,54 +1,52 @@
 package main
 
 import (
+    "encoding/json"
     "fmt"
+    "io/ioutil"
     "log"
     "net"
-    "strconv"
-    "strings"
     "sync"
     "time"
 )
 
+// ServiceRequests maps port numbers to their associated request strings.
+var ServiceRequests map[string][]string
+
+// LoadServiceRequests loads service request mappings from a JSON file.
+func LoadServiceRequests(filePath string) error {
+    data, err := ioutil.ReadFile(filePath)
+    if err != nil {
+        return fmt.Errorf("failed to read %s: %v", filePath, err)
+    }
+    err = json.Unmarshal(data, &ServiceRequests)
+    if err != nil {
+        return fmt.Errorf("failed to unmarshal service requests: %v", err)
+    }
+    return nil
+}
+
 func ScanNetwork(ips, ports []string, timeout int, logger *log.Logger) {
+    // Ensure ServiceRequests is loaded before scanning
+    if err := LoadServiceRequests("service_requests.json"); err != nil {
+        logger.Fatal(err)
+    }
+
     var wg sync.WaitGroup
-    sem := make(chan struct{}, 20) // Limit for concurrent goroutines.
+    sem := make(chan struct{}, 20)
 
     for _, ip := range ips {
         for _, port := range ports {
             wg.Add(1)
-            sem <- struct{}{} // Acquire concurrency slot.
+            sem <- struct{}{}
             go func(ip, port string) {
                 defer wg.Done()
                 scanPortAndLogResult(ip, port, timeout, logger)
-                <-sem // Release slot once done.
+                <-sem
             }(ip, port)
         }
     }
     wg.Wait()
-}
-
-func parsePorts(portsConfig string) ([]string, error) {
-    portsConfig = strings.ReplaceAll(portsConfig, " ", "")
-    if strings.Contains(portsConfig, ",") {
-        return strings.Split(portsConfig, ","), nil
-    } else if strings.Contains(portsConfig, "-") {
-        parts := strings.Split(portsConfig, "-")
-        startPort, err := strconv.Atoi(parts[0])
-        if err != nil {
-            return nil, fmt.Errorf("invalid port start: %v", err)
-        }
-        endPort, err := strconv.Atoi(parts[1])
-        if err != nil {
-            return nil, fmt.Errorf("invalid port end: %v", err)
-        }
-        var ports []string
-        for port := startPort; port <= endPort; port++ {
-            ports = append(ports, strconv.Itoa(port))
-        }
-        return ports, nil
-    }
-    return []string{portsConfig}, nil
 }
 
 func scanPortAndLogResult(ip, port string, timeout int, logger *log.Logger) {
@@ -58,6 +56,32 @@ func scanPortAndLogResult(ip, port string, timeout int, logger *log.Logger) {
         return
     }
     defer conn.Close()
-    // Implement additional logic if needed.
-    logger.Printf("Open port detected: IP %s, Port %s", ip, port)
+
+    banner := grabBanner(conn, port)
+    logger.Printf("Open port detected: IP %s, Port %s, Banner: %q", ip, port, banner)
+}
+
+func grabBanner(conn net.Conn, port string) string {
+    requests, exists := ServiceRequests[port]
+    if !exists {
+        requests = []string{"\n"} // Fallback to a newline if no specific requests are defined for the port
+    }
+
+    conn.SetReadDeadline(time.Now().Add(5 * time.Second))
+    var response string
+    for _, req := range requests {
+        _, err := conn.Write([]byte(req))
+        if err != nil {
+            continue
+        }
+
+        buffer := make([]byte, 4096)
+        n, err := conn.Read(buffer)
+        if err == nil && n > 0 {
+            response = string(buffer[:n])
+            break
+        }
+    }
+
+    return response
 }

@@ -1,0 +1,8 @@
+{
+    "22": ["SSH-2.0-OpenSSH_7.9\n"],
+    "80": ["HEAD / HTTP/1.1\r\nHost: localhost\r\n\r\n", "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n"],
+    "443": ["HEAD / HTTP/1.1\r\nHost: localhost\r\n\r\n", "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n"],
+    "8080": ["HEAD / HTTP/1.1\r\nHost: localhost\r\n\r\n", "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n"],
+    "8443": ["HEAD / HTTP/1.1\r\nHost: localhost\r\n\r\n", "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n"]
+    
+}
