@@ -1,8 +1,10 @@
 # Binary executable
 Lowtide
+lowtide
 
 # Past versions
 _Lowtide.go
+_lowtide.go
 
 # IPs
 ranges.txt
@@ -19,10 +21,11 @@ ranges.txt
 *.exe
 
 # Log files
-/logging
+./logging
+*.log
 
 # Configuration files
-config.json
+configuration/config.json
 
 # Editor files and directories
 .vscode/

@@ -4,14 +4,14 @@
   <img src="./images/lowtide.jpg" alt="Lowtide Logo" width="600"/>
 </p>
 
-## **👨‍💻 Greetings, Cyber Seeker!**
+## **👨‍💻 Greetings, Human**
 
-Welcome to **Lowtide**, your dark ally in the vast digital expanse. Forged in the depths of cyber obscurity using the power of Go, Lowtide is your weapon of choice for uncovering hidden digital landscapes, exploiting vulnerabilities, and mastering the art of network traversal with precision and stealth. 🚀💻
+Welcome to **Lowtide**, your dark ally in the vast digital expanse. Forged in the depths of cyber obscurity using the power of Go, Lowtide is your weapon of choice for uncovering hidden digital landscapes, discovering vulnerabilities, and mastering the art of network traversal with precision and stealth. 🚀💻
 
 ## 🛠️ Features
 
 - **⚡️ Lightning-Fast Scans**: Harnessing Go's concurrency, Lowtide swiftly scans thousands of ports, leaving no digital stone unturned.
-- **🔍 Targeted Banner Analysis**: Extracting banners to unveil services and exploit potential weaknesses is Lowtide's specialty.
+- **🔍 Targeted Banner Analysis**: Extracting banners to unveil services and finding potential weaknesses is Lowtide's specialty.
 - **🔓 Port Decryption**: Lowtide's unparalleled accuracy unlocks the secrets concealed within each port, empowering you with knowledge.
 - **📝 Real-Time Digital Logs**: Every maneuver is meticulously chronicled in real-time, providing you with a detailed roadmap of your cyber conquests.
 - **🌐 Subnet Exploration**: Embark on daring expeditions to map out uncharted digital territories and claim them as your own.
