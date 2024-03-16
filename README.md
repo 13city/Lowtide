@@ -1,7 +1,7 @@
 # 🌊 Lowtide 🌊 Network Surveillance Tool
 
 <p align="center">
-  <img src="./images/lowtide.jpg" alt="Lowtide Logo" width="600"/>
+  <img src="./images/lowtide.jpg" alt="Lowtide Logo" width="800"/>
 </p>
 
 ## **👨‍💻 Greetings, Human**
